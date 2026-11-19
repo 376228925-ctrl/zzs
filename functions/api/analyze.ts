@@ -95,11 +95,11 @@ export const onRequestPost = async (context: PagesContext): Promise<Response> =>
     return jsonResponse({ ok: false, error: '分析请求参数不完整' }, 400);
   }
 
-  const baseUrl = (context.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1').replace(
+  const baseUrl = (context.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(
     /\/+$/,
     ''
   );
-  let usedModel = context.env.DEEPSEEK_MODEL || 'deepseek-v4.1-flash';
+  let usedModel = context.env.DEEPSEEK_MODEL || 'deepseek-flash';
 
   try {
     const messages = buildDeepSeekMessages(body.type, body.context);

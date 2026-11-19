@@ -17,11 +17,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PORT = Number(process.env.PORT || 3000);
-const DEEPSEEK_BASE_URL = (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1').replace(
+const DEEPSEEK_BASE_URL = (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(
   /\/+$/,
   ''
 );
-const PRIMARY_MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-v4.1-flash';
+const PRIMARY_MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-flash';
 
 async function callDeepSeek(
   apiKey: string,
